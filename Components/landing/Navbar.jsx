@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from "@/Components/ui/button";
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,7 +19,6 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Services', href: '#services' },
-    { name: 'Courses', href: '#courses' },
     { name: 'Work', href: '#work' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
@@ -47,14 +47,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a href="#" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
-              </div>
-              <span className={`text-xl font-semibold tracking-tight transition-colors ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}>
-                Corelyn
-              </span>
+              <Image src="/logo.png" alt="Corelyn Logo" width={40} height={40} className="w-10 h-10 object-contain" />
             </a>
 
             <div className="hidden md:flex items-center gap-8">

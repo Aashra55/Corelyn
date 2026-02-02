@@ -12,9 +12,9 @@ const testimonials = [
     rating: 5,
   },
   {
-    content: "The web development course was a game-changer for my career. Within 3 months of completing it, I landed my dream job as a frontend developer.",
-    author: "Michael Chen",
-    role: "Frontend Developer",
+    content: "The collaborative program was an outstanding experience. Working with Corelyn's team significantly accelerated our project, and the shared knowledge was invaluable. Truly a game-changer for our startup!",
+    author: "Maria Garcia",
+    role: "Co-founder, Innovate Solutions",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
     rating: 5,
   },

@@ -1,15 +1,80 @@
 'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+
+const projects = [
+  {
+    title: 'E-commerce Platform',
+    description: 'A cutting-edge online store with a focus on user experience and performance.',
+    category: 'Web Development',
+    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&q=80',
+  },
+  {
+    title: 'Brand Identity Redesign',
+    description: 'A complete visual overhaul for a leading tech startup, from logo to brand guidelines.',
+    category: 'Graphic Design',
+    image: 'https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=600&q=80',
+  },
+  {
+    title: 'Mobile Banking App',
+    description: 'A secure and intuitive mobile app for seamless financial management on the go.',
+    category: 'UI/UX Design',
+    image: 'https://images.unsplash.com/photo-1627916668383-73d744b8ee34?w=600&q=80',
+  },
+];
 
 export default function WorkSection() {
   return (
-    <section id="work" className="py-32 bg-white">
+    <section id="work" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold text-gray-900">Our Work</h2>
-          <p className="mt-4 text-lg text-gray-600">
-            We are proud of the work we do.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
+            Our Portfolio
+          </span>
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+            Selected Works
+          </h2>
+          <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+            Here are a few examples of our passion for creating exceptional digital experiences.
           </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+            >
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
+              <div className="p-6">
+                <p className="text-sm font-medium text-indigo-600">{project.category}</p>
+                <h3 className="mt-2 text-xl font-bold text-gray-900">{project.title}</h3>
+                <p className="mt-3 text-gray-600 text-sm leading-relaxed">{project.description}</p>
+                <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  View Project
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

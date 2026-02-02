@@ -79,11 +79,11 @@ export default function HeroSection() {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
-              onClick={() => scrollToSection('#courses')}
+              onClick={() => scrollToSection('#work')}
               variant="outline"
               className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 py-6 text-base font-semibold backdrop-blur-sm"
             >
-              View Courses
+              View Work
             </Button>
           </motion.div>
 

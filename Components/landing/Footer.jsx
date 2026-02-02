@@ -1,11 +1,12 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 import { Linkedin, Twitter, Instagram, Github } from 'lucide-react';
 
 const footerLinks = {
   Services: ['Graphic Design', 'Web Development', 'Brand Identity', 'UI/UX Design'],
-  Courses: ['Web Development', 'UI/UX Design', 'Data Science', 'View All'],
+  Resources: ['Blog', 'Case Studies', 'Free Templates', 'Community'],
   Company: ['About Us', 'Our Team', 'Careers', 'Contact'],
   Support: ['Help Center', 'Terms of Service', 'Privacy Policy', 'FAQ'],
 };
@@ -24,10 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
-              </div>
-              <span className="text-xl font-semibold tracking-tight">Corelyn</span>
+              <Image src="/logo.png" alt="Corelyn Logo" width={40} height={40} className="w-10 h-10 object-contain" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Transforming ideas into stunning digital experiences through design, 
