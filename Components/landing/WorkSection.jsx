@@ -20,7 +20,7 @@ const projects = [
     title: 'Mobile Banking App',
     description: 'A secure and intuitive mobile app for seamless financial management on the go.',
     category: 'UI/UX Design',
-    image: 'https://images.unsplash.com/photo-1627916668383-73d744b8ee34?w=600&q=80',
+    image: 'https://placehold.co/600x400/000000/FFFFFF/png?text=Mobile+App',
   },
 ];
 
