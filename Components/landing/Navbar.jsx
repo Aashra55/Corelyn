@@ -40,16 +40,14 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100' 
+            ? 'bg-gray-900 backdrop-blur-xl shadow-sm border-b border-gray-100' 
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a href="#" className="flex items-center gap-2">
-              <div className={isScrolled ? 'w-28 h-12 rounded-md bg-indigo-950 flex items-center justify-center transition-colors' : 'w-28 h-12 rounded-md flex items-center justify-center transition-colors'}>
                 <Image src="/logo.png" alt="Corelyn Logo" width={400} height={400} className="object-contain w-28 h-28" />
-              </div>
             </a>
 
             <div className="hidden md:flex items-center gap-8">
@@ -57,9 +55,7 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`text-sm font-medium transition-all hover:opacity-70 ${
-                    isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/90 hover:text-white'
-                  }`}
+                  className={`text-sm font-medium transition-all hover:opacity-70 text-white/90 hover:text-white`}
                 >
                   {link.name}
                 </button>

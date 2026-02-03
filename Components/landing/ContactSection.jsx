@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from "@/Components/ui/button";
 import { Input } from "@/Components/ui/input";
 import { Textarea } from "@/Components/ui/textarea";
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Clock } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -23,7 +23,7 @@ export default function ContactSection() {
 
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'corelynofficial@gmail.com' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
+    { icon: Clock, label: 'Response Time', value: 'Within 24 hours' },
     { icon: MapPin, label: 'Location', value: 'Karachi, Pakistan' },
   ];
 

@@ -71,7 +71,7 @@ export default function ServicesSection() {
           </span>
           <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
             Services tailored to your
-            <span className="block bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="block leading-normal bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               digital success
             </span>
           </h2>

@@ -13,7 +13,7 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: Twitter, href: '#' },
-  { icon: Linkedin, href: '#' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/corelyn' },
   { icon: Instagram, href: '#' },
   { icon: Github, href: '#' },
 ];
