@@ -47,7 +47,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a href="#" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Corelyn Logo" width={100} height={100} className="w-28 h-28 object-contain" />
+              <div className={isScrolled ? 'w-28 h-12 rounded-md bg-indigo-950 flex items-center justify-center transition-colors' : 'w-28 h-12 rounded-md flex items-center justify-center transition-colors'}>
+                <Image src="/logo.png" alt="Corelyn Logo" width={400} height={400} className="object-contain w-28 h-28" />
+              </div>
             </a>
 
             <div className="hidden md:flex items-center gap-8">
