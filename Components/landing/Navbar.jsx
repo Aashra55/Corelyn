@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a href="#" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Corelyn Logo" width={40} height={40} className="w-10 h-10 object-contain" />
+              <Image src="/logo.png" alt="Corelyn Logo" width={100} height={100} className="w-28 h-28 object-contain" />
             </a>
 
             <div className="hidden md:flex items-center gap-8">

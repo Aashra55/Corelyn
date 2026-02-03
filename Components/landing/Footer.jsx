@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <Image src="/logo.png" alt="Corelyn Logo" width={40} height={40} className="w-10 h-10 object-contain" />
+              <Image src="/logo.png" alt="Corelyn Logo" width={100} height={100} className="w-22 h-22 object-contain" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Transforming ideas into stunning digital experiences through design, 
