@@ -10,15 +10,38 @@ import { Mail, Phone, MapPin, Send, CheckCircle, Clock } from 'lucide-react';
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to send message.');
+      }
+
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' }); // Clear form
+      setTimeout(() => setIsSubmitted(false), 5000); // Hide success message after 5 seconds
+
+    } catch (error) {
+      setSubmitError(error.message);
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -127,10 +150,14 @@ export default function ContactSection() {
                   <Button
                     type="submit"
                     className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white rounded-xl py-6 text-base font-semibold shadow-lg shadow-indigo-500/25"
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                     <Send className="ml-2 w-5 h-5" />
                   </Button>
+                  {submitError && (
+                    <p className="text-red-500 text-sm mt-2 text-center">{submitError}</p>
+                  )}
                 </form>
               )}
             </div>
