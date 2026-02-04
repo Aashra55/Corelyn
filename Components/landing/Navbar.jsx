@@ -73,9 +73,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}
+              className={`md:hidden p-2 rounded-lg transition-colors text-white`}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -90,14 +88,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-gray-900 pt-24 px-6 md:hidden"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-lg font-medium text-gray-900 py-3 border-b border-gray-100 text-left"
+                  className="text-lg font-medium text-white py-3 border-b border-gray-100 text-left"
                 >
                   {link.name}
                 </button>
