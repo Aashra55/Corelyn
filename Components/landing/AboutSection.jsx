@@ -75,7 +75,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid md:grid-cols-2 gap-4 grid-cols-1"
           >
             {values.map((value, index) => (
               <motion.div
