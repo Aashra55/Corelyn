@@ -6,29 +6,59 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqData = [
   {
-    question: 'What services do you offer?',
+    question: 'What is Corelyn?',
     answer:
-      'We offer comprehensive digital solutions including graphic design, web development, collaborative programs, and professional training to help businesses grow effectively.',
+      'Corelyn is an early-stage digital initiative focused on building clean, functional, and scalable digital solutions through design and development.',
   },
   {
-    question: 'How long does a typical project take?',
-    answer:
-      'Timelines depend on scope. Simple websites take 2–4 weeks, while complex applications may take 8–12 weeks. Full timelines are shared upfront.',
+    question: 'What services does Corelyn provide?',
+    answer: `We currently focus on:
+• Website design & development
+• UI/UX focused interfaces
+• Branding & visual identity support
+• Digital consultation for early-stage ideas and startups
+
+Our services continue to evolve as we grow.`,
   },
   {
-    question: 'What is your pricing structure?',
+    question: 'Is Corelyn a registered software house?',
     answer:
-      'Pricing is tailored to your needs. We offer fixed-price, hourly, and retainer-based models depending on project scope and requirements.',
+      'Corelyn is currently operating as a digital-first, early-stage initiative, focused on building strong foundations before formal expansion.',
   },
   {
-    question: 'Do you provide ongoing support and maintenance?',
+    question: 'Who is behind Corelyn?',
     answer:
-      'Yes, we offer long-term support including updates, monitoring, security patches, and technical assistance.',
+      'Corelyn is led by a small core team of designers and developers, driven by a founder-led vision focused on clarity, collaboration, and execution.',
   },
   {
-    question: 'What technologies and tools do you use?',
+    question: 'Do you work with clients at this stage?',
     answer:
-      'We use modern technologies like React, Next.js, Node.js, and professional design tools such as Figma and Adobe Suite.',
+      'Yes, we selectively take on small projects and collaborations that align with our current capacity and direction.',
+  },
+  {
+    question: 'What is the collaborative program at Corelyn?',
+    answer:
+      'The collaborative program is an open initiative where designers and developers contribute to real-world and concept-based projects, focusing on learning through hands-on work.',
+  },
+  {
+    question: 'Can collaborators become part of the core team?',
+    answer:
+      'Yes. Based on performance, commitment, and alignment, selected contributors may be considered for core team or long-term collaboration roles.',
+  },
+  {
+    question: 'How can I collaborate or get in touch?',
+    answer:
+      'You can reach us via the contact form on our website or connect with us through our LinkedIn page for collaboration opportunities.',
+  },
+  {
+    question: 'Where is Corelyn based?',
+    answer:
+      'Corelyn operates remotely, allowing collaboration with talent across different locations.',
+  },
+  {
+    question: 'How is Corelyn different from other digital agencies?',
+    answer:
+      'We prioritize clarity, thoughtful execution, and strong foundations over rushing scale or overpromising.',
   },
 ];
 
@@ -109,7 +139,7 @@ export default function FAQSection() {
                       className="overflow-hidden bg-indigo-500"
                     >
                       <div className="px-8 py-6 border-t border-indigo-100">
-                        <p className="text-white leading-relaxed text-sm sm:text-lg">
+                        <p className="text-white leading-relaxed text-sm sm:text-lg whitespace-pre-line">
                           {faq.answer}
                         </p>
                       </div>
