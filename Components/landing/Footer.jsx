@@ -1,14 +1,18 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-
 import { Linkedin, Twitter, Instagram, Github } from 'lucide-react';
 
 const footerLinks = {
   Services: ['Graphic Design', 'Web Development', 'Brand Identity', 'UI/UX Design'],
   Resources: ['Blog', 'Case Studies', 'Free Templates', 'Community'],
   Company: ['About Us', 'Our Team', 'Careers', 'Contact'],
-  Support: ['Help Center', 'Terms of Service', 'Privacy Policy', 'FAQ'],
+  Support: [
+    'Help Center',
+    'Terms of Service',
+    'Privacy Policy',
+    { label: 'FAQ', href: '#faq' },
+  ],
 };
 
 const socialLinks = [
@@ -19,18 +23,36 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <Image src="/logo.png" alt="Corelyn Logo" width={100} height={100} className="w-22 h-22 object-contain" />
+              <Image
+                src="/logo.png"
+                alt="Corelyn Logo"
+                width={100}
+                height={100}
+                className="w-22 h-22 object-contain"
+              />
             </div>
+
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Transforming ideas into stunning digital experiences through design, 
+              Transforming ideas into stunning digital experiences through design,
               development, and education.
             </p>
+
             <div className="flex gap-4 mt-6">
               {socialLinks.map((social, index) => (
                 <a
@@ -48,16 +70,27 @@ export default function Footer() {
             <div key={index}>
               <h3 className="font-semibold text-sm mb-4">{title}</h3>
               <ul className="space-y-3">
-                {links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link, linkIndex) => {
+                  const label = typeof link === 'string' ? link : link.label;
+                  const href = typeof link === 'string' ? '#' : link.href;
+
+                  return (
+                    <li key={linkIndex}>
+                      <a
+                        href={href}
+                        onClick={(e) => {
+                          if (href.startsWith('#')) {
+                            e.preventDefault();
+                            scrollToSection(href);
+                          }
+                        }}
+                        className="text-sm text-gray-400 hover:text-white transition-colors"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
