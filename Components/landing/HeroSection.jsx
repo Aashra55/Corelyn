@@ -94,9 +94,10 @@ export default function HeroSection() {
             className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { value: '50+', label: 'Projects Delivered' },
-              { value: '100%', label: 'Client Satisfaction' },
+              { value: '365', label: 'Days Focused on Growth' },
+              { value: '100%', label: 'Commitment to Quality' },
               { value: '24/7', label: 'Support Available' },
+              { value: '0%', label: 'Compromise on Standards'}
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</div>
