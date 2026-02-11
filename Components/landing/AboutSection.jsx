@@ -58,9 +58,9 @@ export default function AboutSection() {
 
             <div className="mt-10 flex flex-wrap gap-8">
               {[
-                { value: '3+', label: 'Years Experience' },
-                { value: '50+', label: 'Projects Completed' },
-                { value: '100%', label: 'Client Satisfaction' },
+              { value: '365', label: 'Days Focused on Growth' },
+              { value: '100%', label: 'Commitment to Quality' },
+              { value: '24/7', label: 'Support Available' },
               ].map((stat, index) => (
                 <div key={index}>
                   <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
