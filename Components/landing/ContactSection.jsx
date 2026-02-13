@@ -51,7 +51,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-32 bg-white dark:bg-slate-950 relative">
+    <section id="contact" className="py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
           <motion.div
@@ -63,11 +63,11 @@ export default function ContactSection() {
             <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
               Get In Touch
             </span>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+            <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
               Let's create
               <span className="block text-[#006cff]">something amazing</span>
             </h2>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               Ready to start your project or enroll in a course? We'd love to hear from you. 
               Reach out and let's discuss how we can help you achieve your goals.
             </p>
@@ -86,8 +86,8 @@ export default function ContactSection() {
                     <item.icon className="w-5 h-5 text-[#006cff]" />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{item.label}</div>
-                    <div className="font-medium text-gray-900 dark:text-white">{item.value}</div>
+                    <div className="text-sm text-gray-500">{item.label}</div>
+                    <div className="font-medium text-gray-900">{item.value}</div>
                   </div>
                 </motion.div>
               ))}
@@ -100,7 +100,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-          <div className="bg-gray-50 dark:bg-slate-900 rounded-3xl p-8 lg:p-10 border border-transparent dark:border-slate-800">
+          <div className="bg-gray-50 rounded-3xl p-8 lg:p-10">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -110,40 +110,40 @@ export default function ContactSection() {
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Message Sent!</h3>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">We'll get back to you within 24 hours.</p>
+                  <h3 className="text-2xl font-bold text-gray-900">Message Sent!</h3>
+                  <p className="mt-2 text-gray-600">We'll get back to you within 24 hours.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Name</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                     <Input
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your name"
-                      className="h-12 rounded-xl border-gray-200 bg-white dark:bg-slate-900 dark:border-slate-700 focus:border-[#006cff] focus:ring-[#006cff]"
+                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#006cff] focus:ring-[#006cff]"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <Input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="you@example.com"
-                      className="h-12 rounded-xl border-gray-200 bg-white dark:bg-slate-900 dark:border-slate-700 focus:border-[#006cff] focus:ring-[#006cff]"
+                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#006cff] focus:ring-[#006cff]"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">Message</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                     <Textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your project or course interest..."
                       rows={5}
-                      className="rounded-xl border-gray-200 bg-white dark:bg-slate-900 dark:border-slate-700 focus:border-[#006cff] focus:ring-[#006cff] resize-none"
+                      className="rounded-xl border-gray-200 bg-white focus:border-[#006cff] focus:ring-[#006cff] resize-none"
                       required
                     />
                   </div>

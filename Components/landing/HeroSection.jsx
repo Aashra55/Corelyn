@@ -13,7 +13,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-[#001b3f] dark:to-[#000b1f]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-20 w-[420px] h-[420px] bg-gradient-to-br from-[#006cff]/12 to-sky-200/40 rounded-full blur-3xl" />
@@ -35,17 +35,17 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50/80 dark:bg-white/10 border border-[#006cff]/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50/80 border border-[#006cff]/10 mb-8"
           >
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-sm font-medium text-slate-800 dark:text-slate-100">Crafting Digital Excellence</span>
+            <span className="text-sm font-medium text-slate-800">Crafting Digital Excellence</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight"
           >
             Design. Develop.
             <br />
@@ -58,7 +58,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            className="mt-8 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
             We transform ideas into stunning digital experiences. From captivating designs 
             to powerful web solutions and expert-led tech courses — we're your partner in digital success.
@@ -80,7 +80,7 @@ export default function HeroSection() {
             <Button
               onClick={() => scrollToSection('#work')}
               variant="outline"
-              className="border-gray-300 text-slate-800 hover:bg-gray-50 dark:border-slate-600 dark:text-slate-100 dark:hover:bg-slate-900 rounded-full px-8 py-6 text-base font-semibold"
+              className="border-gray-300 text-slate-800 hover:bg-gray-50 rounded-full px-8 py-6 text-base font-semibold"
             >
               View Work
             </Button>
@@ -99,8 +99,8 @@ export default function HeroSection() {
               { value: '0%', label: 'Compromise on Standards'}
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">{stat.value}</div>
-                <div className="mt-1 text-sm text-gray-500 dark:text-gray-400">{stat.label}</div>
+                <div className="text-3xl sm:text-4xl font-bold text-slate-900">{stat.value}</div>
+                <div className="mt-1 text-sm text-gray-500">{stat.label}</div>
               </div>
             ))}
           </motion.div>

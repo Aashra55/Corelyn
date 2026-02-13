@@ -34,7 +34,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-sky-300 text-slate-900 dark:bg-slate-800 dark:text-slate-100">
+    <footer className="bg-sky-300 text-slate-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           <div className="col-span-2">
@@ -48,7 +48,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-700 text-sm leading-relaxed max-w-xs">
               Transforming ideas into stunning digital experiences through design,
               development, and education.
             </p>
@@ -60,7 +60,7 @@ export default function Footer() {
                   href={social.href}
                   className="w-10 h-10 rounded-lg bg-black/5 flex items-center justify-center hover:bg-black/10 transition-colors"
                 >
-                    <social.icon className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                    <social.icon className="w-5 h-5 text-gray-700" />
                 </a>
               ))}
             </div>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([title, links], index) => (
             <div key={index}>
-              <h3 className="font-semibold text-sm mb-4 text-gray-800 dark:text-gray-100">{title}</h3>
+              <h3 className="font-semibold text-sm mb-4 text-gray-800">{title}</h3>
               <ul className="space-y-3">
                 {links.map((link, linkIndex) => {
                   const label = typeof link === 'string' ? link : link.label;
@@ -84,7 +84,7 @@ export default function Footer() {
                             scrollToSection(href);
                           }
                         }}
-                        className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-200 transition-colors"
+                        className="text-sm text-gray-700 hover:text-gray-500 transition-colors"
                       >
                         {label}
                       </a>
@@ -96,11 +96,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-700 dark:text-gray-300">
+        <div className="mt-16 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-700">
             © {new Date().getFullYear()} Corelyn. All rights reserved.
           </p>
-          <p className="text-sm text-gray-700 dark:text-gray-300">
+          <p className="text-sm text-gray-700">
             Crafted with passion for digital excellence
           </p>
         </div>

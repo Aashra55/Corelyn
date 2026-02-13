@@ -39,8 +39,8 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section id="courses" className="py-32 bg-gray-50 dark:bg-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-slate-700 to-transparent" />
+    <section id="courses" className="py-32 bg-gray-50 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
@@ -54,11 +54,11 @@ export default function CoursesSection() {
             <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
               Learn & Grow
             </span>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+            <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
               Tech courses that
               <span className="block text-[#006cff]">launch careers</span>
             </h2>
-            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               Industry-relevant curriculum, hands-on projects, and expert mentorship 
               to help you master the skills employers are looking for.
             </p>
@@ -66,7 +66,7 @@ export default function CoursesSection() {
           
           <Button
             variant="outline"
-            className="border-gray-300 dark:border-slate-700 text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full px-6 py-5 self-start lg:self-auto"
+            className="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-full px-6 py-5 self-start lg:self-auto"
           >
             View All Courses
             <ArrowRight className="ml-2 w-4 h-4" />
@@ -83,7 +83,7 @@ export default function CoursesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white dark:bg-slate-900/40 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col">
                 <div className="relative h-52 overflow-hidden">
                   <img
                     src={course.image}
@@ -104,15 +104,15 @@ export default function CoursesSection() {
                 </div>
 
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[#006cff] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#006cff] transition-colors">
                     {course.title}
                   </h3>
-                  <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex-1">
+                  <p className="mt-3 text-gray-600 text-sm leading-relaxed flex-1">
                     {course.description}
                   </p>
 
-                  <div className="mt-6 pt-6 border-t border-gray-100 dark:border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                  <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-sm text-gray-500">
                       <span className="flex items-center gap-1.5">
                         <Clock className="w-4 h-4" />
                         {course.duration}
