@@ -70,11 +70,11 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-white relative overflow-hidden">
+    <section id="faq" className="py-24 bg-white dark:bg-slate-950 relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-[#006cff]/5 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-sky-100 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-sky-100 dark:from-slate-900 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
@@ -90,14 +90,14 @@ export default function FAQSection() {
             FAQ
           </span>
 
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900">
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
             Everything you need to{' '}
             <span className="block bg-gradient-to-r from-[#006cff] to-sky-500 bg-clip-text text-transparent">
               know
             </span>
           </h2>
 
-          <p className="mt-5 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-5 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Clear answers to common questions about our services and process.
           </p>
         </motion.div>
@@ -110,13 +110,13 @@ export default function FAQSection() {
             return (
               <div
                 key={index}
-                className="border border-gray-200 rounded-3xl bg-white shadow-sm hover:shadow-md transition-all overflow-hidden"
+                className="border border-gray-200 dark:border-slate-800 rounded-3xl bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all overflow-hidden"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 text-left hover:bg-gray-50 transition"
+                  className="w-full flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 text-left hover:bg-gray-50 dark:hover:bg-slate-900/80 transition"
                 >
-                  <span className="text-sm sm:text-xl font-semibold text-gray-900 pr-4">
+                  <span className="text-sm sm:text-xl font-semibold text-gray-900 dark:text-white pr-4">
                     {faq.question}
                   </span>
 
@@ -153,7 +153,7 @@ export default function FAQSection() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-            <p className="text-gray-600 text-base sm:text-lg">
+            <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg">
             Still have questions?{' '}
             <a
               href="#contact"

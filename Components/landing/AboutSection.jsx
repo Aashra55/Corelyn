@@ -28,8 +28,8 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-32 bg-gray-50 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+    <section id="about" className="py-32 bg-gray-50 dark:bg-slate-900 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-slate-700 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -42,16 +42,16 @@ export default function AboutSection() {
             <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
               About Us
             </span>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+            <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
               We're building the
               <span className="block text-[#006cff]">future of digital</span>
             </h2>
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               Founded with a vision to democratize digital excellence, Corelyn combines 
               creative expertise with technical prowess to help businesses and individuals 
               thrive in the digital age.
             </p>
-            <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               Our team of designers, developers, and educators are united by a common goal: 
               delivering exceptional value through innovative solutions and world-class education.
             </p>
@@ -62,9 +62,9 @@ export default function AboutSection() {
               { value: '100%', label: 'Commitment to Quality' },
               { value: '24/7', label: 'Support Available' },
               ].map((stat, index) => (
-                <div key={index}>
-                  <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
+              <div key={index}>
+                  <div className="text-3xl font-bold text-gray-900 dark:text-white">{stat.value}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -84,13 +84,13 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="bg-white dark:bg-slate-900/40 border border-transparent dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#006cff]/5 to-sky-100 flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-[#006cff]" />
+                  <value.icon className="w-6 h-6 text-[#006cff] dark:text-[#024fba]" />
                 </div>
-                <h3 className="font-bold text-gray-900">{value.title}</h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white">{value.title}</h3>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>

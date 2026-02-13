@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Button } from "@/Components/ui/button";
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ThemeToggle from '@/Components/ThemeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,11 +40,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-white backdrop-blur-xl shadow-sm border-b border-sky-100' 
-            : 'bg-white'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/90 dark:bg-white/10 backdrop-blur-xl shadow-sm border-b border-sky-100/70 dark:border-slate-800`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -56,7 +53,7 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`text-sm font-medium transition-all hover:opacity-70 text-black/90 hover:text-black`}
+                  className="text-sm font-medium transition-all hover:opacity-70 text-slate-800 hover:text-slate-900 dark:text-slate-100 dark:hover:text-white"
                 >
                   {link.name}
                 </button>
@@ -64,6 +61,7 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center gap-4">
+              <ThemeToggle />
               <Button
                 onClick={() => scrollToSection('#contact')}
                 className="bg-gradient-to-r from-[#006cff] to-sky-500 hover:from-[#0052cc] hover:to-sky-600 text-white rounded-full px-6 shadow-lg shadow-[#006cff]/25 transition-all hover:shadow-xl hover:shadow-[#006cff]/30"
@@ -74,7 +72,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors text-white`}
+              className="md:hidden p-2 rounded-lg transition-colors text-slate-900 dark:text-slate-100"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

@@ -26,7 +26,7 @@ const projects = [
 
 export default function WorkSection() {
   return (
-    <section id="work" className="py-32 bg-gray-50">
+    <section id="work" className="py-32 bg-gray-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +38,10 @@ export default function WorkSection() {
           <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
             Our Portfolio
           </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+          <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
             Selected Works
           </h2>
-          <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             Here are a few examples of our passion for creating exceptional digital experiences.
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export default function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+              className="group bg-white dark:bg-slate-900/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 dark:border dark:border-slate-800"
             >
               <div className="relative h-56 overflow-hidden">
                 <img
@@ -66,9 +66,9 @@ export default function WorkSection() {
               </div>
               <div className="p-6">
                 <p className="text-sm font-medium text-[#006cff]">{project.category}</p>
-                <h3 className="mt-2 text-xl font-bold text-gray-900">{project.title}</h3>
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed">{project.description}</p>
-                <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#006cff] transition-colors">
+                <h3 className="mt-2 text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{project.description}</p>
+                <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white group-hover:text-[#006cff] transition-colors">
                   View Project
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </button>

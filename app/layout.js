@@ -1,4 +1,5 @@
 import './globals.css';
+import { AppThemeProvider } from '@/Components/ThemeProvider';
 
 export const metadata = {
   title: 'Corelyn',
@@ -7,8 +8,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <AppThemeProvider>
+          {children}
+        </AppThemeProvider>
+      </body>
     </html>
   )
 }
