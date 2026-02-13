@@ -60,12 +60,12 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
+            <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
               Get In Touch
             </span>
             <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
               Let's create
-              <span className="block text-indigo-600">something amazing</span>
+              <span className="block text-[#006cff]">something amazing</span>
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               Ready to start your project or enroll in a course? We'd love to hear from you. 
@@ -82,8 +82,8 @@ export default function ContactSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-indigo-600" />
+                  <div className="w-12 h-12 rounded-xl bg-[#006cff]/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-[#006cff]" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">{item.label}</div>
@@ -121,7 +121,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your name"
-                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-indigo-500 focus:ring-indigo-500"
+                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#006cff] focus:ring-[#006cff]"
                       required
                     />
                   </div>
@@ -132,7 +132,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="you@example.com"
-                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-indigo-500 focus:ring-indigo-500"
+                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#006cff] focus:ring-[#006cff]"
                       required
                     />
                   </div>
@@ -143,13 +143,13 @@ export default function ContactSection() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your project or course interest..."
                       rows={5}
-                      className="rounded-xl border-gray-200 bg-white focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+                      className="rounded-xl border-gray-200 bg-white focus:border-[#006cff] focus:ring-[#006cff] resize-none"
                       required
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white rounded-xl py-6 text-base font-semibold shadow-lg shadow-indigo-500/25"
+                    className="w-full bg-gradient-to-r from-[#006cff] to-sky-500 hover:from-[#0052cc] hover:to-sky-600 text-white rounded-xl py-6 text-base font-semibold shadow-lg shadow-[#006cff]/25"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}

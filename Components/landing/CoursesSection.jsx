@@ -51,12 +51,12 @@ export default function CoursesSection() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16"
         >
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
+            <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
               Learn & Grow
             </span>
             <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
               Tech courses that
-              <span className="block text-indigo-600">launch careers</span>
+              <span className="block text-[#006cff]">launch careers</span>
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               Industry-relevant curriculum, hands-on projects, and expert mentorship 
@@ -104,7 +104,7 @@ export default function CoursesSection() {
                 </div>
 
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#006cff] transition-colors">
                     {course.title}
                   </h3>
                   <p className="mt-3 text-gray-600 text-sm leading-relaxed flex-1">

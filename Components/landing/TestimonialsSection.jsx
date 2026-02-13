@@ -29,11 +29,11 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-32 bg-gradient-to-br from-gray-900 via-indigo-950 to-violet-950 relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-br from-gray-900 via-[#001b3f] to-[#000b1f] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#006cff]/12 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -44,12 +44,12 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-indigo-400 tracking-wide uppercase">
+          <span className="text-sm font-semibold text-[#4da6ff] tracking-wide uppercase">
             Testimonials
           </span>
           <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-white tracking-tight">
             Loved by clients &
-            <span className="block text-indigo-400">students alike</span>
+            <span className="block text-[#4da6ff]">students alike</span>
           </h2>
         </motion.div>
 
@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
               className="relative"
             >
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 h-full">
-                <Quote className="w-10 h-10 text-indigo-400/50 mb-6" />
+                <Quote className="w-10 h-10 text-[#4da6ff]/70 mb-6" />
                 
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (

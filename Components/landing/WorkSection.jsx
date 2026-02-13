@@ -35,7 +35,7 @@ export default function WorkSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
+          <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
             Our Portfolio
           </span>
           <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
@@ -65,10 +65,10 @@ export default function WorkSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               <div className="p-6">
-                <p className="text-sm font-medium text-indigo-600">{project.category}</p>
+                <p className="text-sm font-medium text-[#006cff]">{project.category}</p>
                 <h3 className="mt-2 text-xl font-bold text-gray-900">{project.title}</h3>
                 <p className="mt-3 text-gray-600 text-sm leading-relaxed">{project.description}</p>
-                <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                <button className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#006cff] transition-colors">
                   View Project
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </button>

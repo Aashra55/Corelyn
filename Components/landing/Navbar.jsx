@@ -41,8 +41,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-gray-900 backdrop-blur-xl shadow-sm border-b border-gray-100' 
-            : 'bg-transparent'
+            ? 'bg-white backdrop-blur-xl shadow-sm border-b border-sky-100' 
+            : 'bg-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -56,7 +56,7 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`text-sm font-medium transition-all hover:opacity-70 text-white/90 hover:text-white`}
+                  className={`text-sm font-medium transition-all hover:opacity-70 text-black/90 hover:text-black`}
                 >
                   {link.name}
                 </button>
@@ -66,7 +66,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-4">
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white rounded-full px-6 shadow-lg shadow-indigo-500/25 transition-all hover:shadow-xl hover:shadow-indigo-500/30"
+                className="bg-gradient-to-r from-[#006cff] to-sky-500 hover:from-[#0052cc] hover:to-sky-600 text-white rounded-full px-6 shadow-lg shadow-[#006cff]/25 transition-all hover:shadow-xl hover:shadow-[#006cff]/30"
               >
                 Get Started
               </Button>
@@ -103,7 +103,7 @@ export default function Navbar() {
               ))}
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="mt-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-full py-6"
+                className="mt-4 bg-gradient-to-r from-[#006cff] to-sky-500 text-white rounded-full py-6"
               >
                 Get Started
               </Button>

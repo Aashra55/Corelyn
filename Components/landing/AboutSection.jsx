@@ -39,12 +39,12 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
+            <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
               About Us
             </span>
             <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
               We're building the
-              <span className="block text-indigo-600">future of digital</span>
+              <span className="block text-[#006cff]">future of digital</span>
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               Founded with a vision to democratize digital excellence, Corelyn combines 
@@ -86,8 +86,8 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-100 to-violet-100 flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-indigo-600" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#006cff]/5 to-sky-100 flex items-center justify-center mb-4">
+                  <value.icon className="w-6 h-6 text-[#006cff]" />
                 </div>
                 <h3 className="font-bold text-gray-900">{value.title}</h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">{value.description}</p>

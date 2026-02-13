@@ -17,8 +17,8 @@ const services = [
     title: 'Web Development',
     description: 'Custom websites and web applications built with cutting-edge technology for performance and scalability.',
     features: ['Custom Websites', 'E-commerce', 'Web Applications', 'CMS Development'],
-    gradient: 'from-indigo-500 to-violet-500',
-    bgGradient: 'from-indigo-500/10 to-violet-500/10',
+    gradient: 'from-[#006cff] to-sky-500',
+    bgGradient: 'from-[#006cff]/10 to-sky-500/10',
   },
   {
     icon: GraduationCap,
@@ -54,8 +54,8 @@ export default function ServicesSection() {
     <section id="services" className="py-32 bg-white relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-indigo-50 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-violet-50 to-transparent" />
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-[#006cff]/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-sky-100 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -66,12 +66,12 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
+          <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
             What We Offer
           </span>
           <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
             Services tailored to your
-            <span className="block leading-normal bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="block leading-normal bg-gradient-to-r from-[#006cff] to-sky-500 bg-clip-text text-transparent">
               digital success
             </span>
           </h2>
@@ -113,7 +113,7 @@ export default function ServicesSection() {
                   ))}
                 </ul>
 
-                <button className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                <button className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#006cff] transition-colors">
                   Learn more
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </button>

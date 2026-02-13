@@ -73,8 +73,8 @@ export default function FAQSection() {
     <section id="faq" className="py-24 bg-white relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-indigo-50 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-violet-50 to-transparent" />
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-[#006cff]/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-sky-100 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
@@ -86,13 +86,13 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <span className="text-sm font-semibold text-indigo-600 uppercase tracking-wide">
+          <span className="text-sm font-semibold text-[#006cff] uppercase tracking-wide">
             FAQ
           </span>
 
           <h2 className="mt-4 text-4xl sm:text-5xl font-bold text-gray-900">
             Everything you need to{' '}
-            <span className="block bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#006cff] to-sky-500 bg-clip-text text-transparent">
               know
             </span>
           </h2>
@@ -120,11 +120,11 @@ export default function FAQSection() {
                     {faq.question}
                   </span>
 
-                  <span className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg bg-indigo-50">
+                  <span className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg bg-[#006cff]/10">
                     {isOpen ? (
-                      <Minus className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-indigo-600" />
+                      <Minus className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#006cff]" />
                     ) : (
-                      <Plus className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-indigo-600" />
+                      <Plus className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#006cff]" />
                     )}
                   </span>
                 </button>
@@ -136,9 +136,9 @@ export default function FAQSection() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden bg-indigo-500"
+                      className="overflow-hidden bg-[#006cff]"
                     >
-                      <div className="px-8 py-6 border-t border-indigo-100">
+                      <div className="px-8 py-6 border-t border-[#006cff]/20">
                         <p className="text-white leading-relaxed text-sm sm:text-lg whitespace-pre-line">
                           {faq.answer}
                         </p>
@@ -153,11 +153,11 @@ export default function FAQSection() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-600 text-base sm:text-lg">
+            <p className="text-gray-600 text-base sm:text-lg">
             Still have questions?{' '}
             <a
               href="#contact"
-              className="font-semibold text-indigo-600 hover:text-indigo-700 underline-offset-2 hover:underline"
+              className="font-semibold text-[#006cff] hover:text-sky-600 underline-offset-2 hover:underline"
             >
               Get in touch
             </a>
