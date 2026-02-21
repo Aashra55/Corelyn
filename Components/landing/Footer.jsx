@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { Linkedin, Twitter, Instagram, Github } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 
 const footerLinks = {
   Services: ['Graphic Design', 'Web Development', 'Brand Identity', 'UI/UX Design'],
@@ -18,8 +18,8 @@ const footerLinks = {
 const socialLinks = [
   { icon: Twitter, href: '#' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/corelyn' },
-  { icon: Instagram, href: '#' },
-  { icon: Github, href: '#' },
+  { icon: Instagram, href: 'https://www.instagram.com/corelynofficial/#' },
+  { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61588279177410' },
 ];
 
 export default function Footer() {
