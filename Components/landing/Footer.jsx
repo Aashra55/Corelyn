@@ -16,7 +16,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Twitter, href: '#' },
+  { icon: Twitter, href: 'https://x.com/corelynofficial' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/corelyn' },
   { icon: Instagram, href: 'https://www.instagram.com/corelynofficial/#' },
   { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61588279177410' },
