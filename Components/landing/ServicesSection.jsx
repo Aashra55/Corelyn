@@ -7,6 +7,7 @@ const services = [
   {
     icon: Palette,
     title: 'Graphic Design',
+    slug: 'graphic-design',
     description: 'Brand identities, UI/UX design, marketing materials, and visual content that captivates and converts.',
     features: ['Brand Identity', 'UI/UX Design', 'Print & Digital', 'Social Media Graphics'],
     gradient: 'from-rose-500 to-orange-500',
@@ -15,6 +16,7 @@ const services = [
   {
     icon: Code,
     title: 'Web Development',
+    slug: 'website-development',
     description: 'Custom websites and web applications built with cutting-edge technology for performance and scalability.',
     features: ['Custom Websites', 'E-commerce', 'Web Applications', 'CMS Development'],
     gradient: 'from-[#006cff] to-sky-500',
@@ -23,6 +25,7 @@ const services = [
   {
     icon: GraduationCap,
     title: 'Collaborative Programs',
+    slug: 'collaborative-program',
     description: 'Partner with us to build innovative solutions, share expertise, and drive mutual growth through joint ventures and strategic alliances.',
     features: ['Joint Ventures', 'Strategic Partnerships', 'Co-development', 'Knowledge Sharing'],
     gradient: 'from-emerald-500 to-teal-500',
@@ -65,7 +68,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
-          >
+        >
           <span className="text-sm font-semibold text-[#006cff] tracking-wide uppercase">
             What We Offer
           </span>
@@ -76,7 +79,7 @@ export default function ServicesSection() {
             </span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-            Whether you need stunning visuals, a powerful web presence, or want to upskill — 
+            Whether you need stunning visuals, a powerful web presence, or want to upskill —
             we've got you covered with our comprehensive suite of services.
           </p>
         </motion.div>
@@ -95,7 +98,7 @@ export default function ServicesSection() {
               className="group relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
+
               <div className="relative bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 h-full">
                 <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} shadow-lg`}>
                   <service.icon className="w-7 h-7 text-white" />
@@ -113,10 +116,13 @@ export default function ServicesSection() {
                   ))}
                 </ul>
 
-                <button className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#006cff] transition-colors">
+                <a
+                  href={`/services/${service.slug}`}
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#006cff] transition-colors"
+                >
                   Learn more
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
