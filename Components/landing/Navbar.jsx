@@ -26,9 +26,16 @@ export default function Navbar() {
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // If element not found, we might be on a subpage, redirect to home
+        window.location.href = '/' + href;
+      }
+    } else {
+      window.location.href = href;
     }
     setIsMobileMenuOpen(false);
   };
@@ -44,7 +51,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a href="#" className="flex items-center gap-2">
-                <Image src="/logo.png" alt="Corelyn Logo" width={400} height={400} className="object-contain w-28 h-28" />
+              <Image src="/logo.png" alt="Corelyn Logo" width={400} height={400} className="object-contain w-28 h-28" />
             </a>
 
             <div className="hidden md:flex items-center gap-8">
