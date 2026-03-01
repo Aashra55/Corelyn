@@ -118,7 +118,7 @@ export default function ServiceTemplate({ data }) {
                                                 <div className="w-2 h-2 rounded-full bg-[#006cff] animate-pulse" />
                                                 <span className="text-[10px] font-black uppercase tracking-widest text-[#006cff]">Strategic Accuracy</span>
                                             </div>
-                                            <h4 className="text-4xl font-black text-gray-900 mb-2 italic">98%</h4>
+                                            <h4 className="text-4xl font-black text-gray-900 mb-2">98%</h4>
                                             <p className="text-sm text-gray-500 font-medium">Standardized Client Retention Rate.</p>
 
                                             {/* Mini Sparkline Visualization */}
@@ -153,7 +153,7 @@ export default function ServiceTemplate({ data }) {
                                                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                                                 <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600">Verification</span>
                                             </div>
-                                            <h4 className="text-3xl font-black text-gray-900 mb-2 italic">24/7</h4>
+                                            <h4 className="text-3xl font-black text-gray-900 mb-2">24/7</h4>
                                             <p className="text-sm text-gray-500 font-medium">Constant Critical Infrastructure Support.</p>
 
                                             <div className="mt-6 flex gap-1">
@@ -200,7 +200,7 @@ export default function ServiceTemplate({ data }) {
                                 <span className="text-[9px] font-black text-gray-400 tracking-tighter">REF-ID: {title.toUpperCase().slice(0, 3)}-V2.0</span>
                             </div>
                             <div className="absolute -bottom-6 -right-6 z-20 bg-[#006cff] px-3 py-1.5 rounded-md shadow-xl border border-white/10">
-                                <span className="text-[9px] font-black text-white tracking-widest uppercase italic">Target_Locked</span>
+                                <span className="text-[9px] font-black text-white tracking-widest uppercase">Target_Locked</span>
                             </div>
 
                             <div className="relative group">
@@ -369,9 +369,9 @@ export default function ServiceTemplate({ data }) {
                             >
                                 <div className="h-full p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-[#006cff]/20 hover:bg-white hover:shadow-xl transition-all duration-500 flex flex-col items-center md:items-start text-center md:text-left">
                                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#006cff] to-sky-500 shadow-lg shadow-[#006cff]/20 flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform duration-500">
-                                        <span className="text-xl font-black text-white italic tracking-tighter">{step.step}</span>
+                                        <span className="text-xl font-black text-white tracking-tighter">{step.step}</span>
                                     </div>
-                                    <h4 className="text-lg font-bold text-slate-900 mb-4 tracking-tight uppercase italic">{step.title}</h4>
+                                    <h4 className="text-lg font-bold text-slate-900 mb-4 tracking-tight uppercase">{step.title}</h4>
                                     <p className="text-slate-600 text-[13px] leading-relaxed font-medium">{step.description}</p>
                                 </div>
                             </motion.div>
@@ -385,7 +385,7 @@ export default function ServiceTemplate({ data }) {
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
                 {/* Large Background Branding Elements */}
-                <div className="absolute -left-20 top-1/2 -translate-y-1/2 text-[15rem] md:text-[25rem] font-black text-slate-200/20 pointer-events-none select-none italic uppercase leading-none tracking-tighter">
+                <div className="absolute -left-20 top-1/2 -translate-y-1/2 text-[15rem] md:text-[25rem] font-black text-slate-200/20 pointer-events-none select-none uppercase leading-none tracking-tighter">
                     Impact
                 </div>
 
@@ -407,7 +407,7 @@ export default function ServiceTemplate({ data }) {
                                 viewport={{ once: true }}
                                 className="relative py-4"
                             >
-                                <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase italic leading-[0.95]">
+                                <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase leading-[0.95]">
                                     Driving <span className="text-[#006cff]">Measurable</span> <br />
                                     Execution <span className="text-slate-400">Excellence.</span>
                                 </h3>
@@ -426,7 +426,7 @@ export default function ServiceTemplate({ data }) {
                                         <div className="w-10 h-10 rounded-full bg-[#006cff]/10 flex items-center justify-center">
                                             <Zap className="w-5 h-5 text-[#006cff]" />
                                         </div>
-                                        <span className="font-bold text-slate-900 uppercase tracking-widest text-[10px] italic">Strategic Seal of Quality</span>
+                                        <span className="font-bold text-slate-900 uppercase tracking-widest text-[10px]">Strategic Seal of Quality</span>
                                     </div>
                                 </div>
                             </motion.div>
@@ -446,14 +446,14 @@ export default function ServiceTemplate({ data }) {
                                         transition={{ delay: index * 0.1 }}
                                         className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-[#006cff]/20 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
                                     >
-                                        <div className="absolute -top-4 -right-4 text-slate-50 font-black text-8xl group-hover:text-[#006cff]/5 transition-colors pointer-events-none italic select-none">
+                                        <div className="absolute -top-4 -right-4 text-slate-50 font-black text-8xl group-hover:text-[#006cff]/5 transition-colors pointer-events-none select-none">
                                             0{index + 1}
                                         </div>
                                         <div className="relative z-10">
                                             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 group-hover:bg-[#006cff] transition-all duration-500 group-hover:rotate-6">
                                                 <Icon className="w-7 h-7 text-[#006cff] group-hover:text-white transition-colors" />
                                             </div>
-                                            <h4 className="text-lg font-bold text-slate-900 mb-4 tracking-tight uppercase italic">{item.title}</h4>
+                                            <h4 className="text-lg font-bold text-slate-900 mb-4 tracking-tight uppercase">{item.title}</h4>
                                             <p className="text-slate-500 text-sm leading-relaxed font-medium">{item.description}</p>
                                         </div>
                                     </motion.div>
@@ -494,7 +494,7 @@ export default function ServiceTemplate({ data }) {
                                         />
                                     </div>
                                 </div>
-                                <p className="text-slate-500 text-sm font-medium italic leading-relaxed">
+                                <p className="text-slate-500 text-sm font-medium leading-relaxed">
                                     "We are documenting high-impact execution success for {title} partners. Technical breakdowns and ROI metrics are being finalized for publication."
                                 </p>
                             </div>
@@ -523,7 +523,7 @@ export default function ServiceTemplate({ data }) {
 
                                         <div className="relative h-full p-8 flex flex-col justify-between">
                                             <div className="flex justify-between items-start">
-                                                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 italic font-black text-[#006cff] text-xs">
+                                                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 font-black text-[#006cff] text-xs">
                                                     {item.id}
                                                 </div>
                                                 <div className="px-3 py-1 rounded-full bg-sky-50 border border-sky-100">
@@ -599,7 +599,7 @@ export default function ServiceTemplate({ data }) {
                                     <div className="h-px w-20 bg-slate-100 hidden md:block" />
                                 </div>
 
-                                <h2 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-[0.9] italic">
+                                <h2 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-[0.9]">
                                     Ready to <span className="text-[#006cff]">Scale</span> Your <br />
                                     Digital Infrastructure?
                                 </h2>
