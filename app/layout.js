@@ -1,4 +1,6 @@
 import './globals.css';
+import Navbar from '../Components/landing/Navbar';
+import Footer from '../Components/landing/Footer';
 
 export const metadata = {
   title: 'Corelyn',
@@ -8,7 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

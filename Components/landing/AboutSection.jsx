@@ -47,22 +47,22 @@ export default function AboutSection() {
               <span className="block text-[#006cff]">future of digital</span>
             </h2>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-              Founded with a vision to democratize digital excellence, Corelyn combines 
-              creative expertise with technical prowess to help businesses and individuals 
+              Founded with a vision to democratize digital excellence, Corelyn combines
+              creative expertise with technical prowess to help businesses and individuals
               thrive in the digital age.
             </p>
             <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-              Our team of designers, developers, and educators are united by a common goal: 
+              Our team of designers, developers, and educators are united by a common goal:
               delivering exceptional value through innovative solutions and world-class education.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-8">
               {[
-              { value: '365', label: 'Days Focused on Growth' },
-              { value: '100%', label: 'Commitment to Quality' },
-              { value: '24/7', label: 'Support Available' },
+                { value: '365', label: 'Days Focused on Growth' },
+                { value: '100%', label: 'Commitment to Quality' },
+                { value: '24/7', label: 'Support Available' },
               ].map((stat, index) => (
-              <div key={index}>
+                <div key={index}>
                   <div className="text-3xl font-bold text-gray-900">{stat.value}</div>
                   <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
                 </div>

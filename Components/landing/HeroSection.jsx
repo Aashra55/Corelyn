@@ -4,14 +4,32 @@ import { Button } from "@/Components/ui/button";
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function HeroSection() {
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+export default function HeroSection({
+  badgeText = "Crafting Digital Excellence",
+  title1 = "Design. Develop.",
+  title2 = "Dominate Digital.",
+  description = "We transform ideas into stunning digital experiences. From captivating designs to powerful web solutions and expert-led tech courses — we're your partner in digital success.",
+  primaryCTA = {
+    text: "Explore Services",
+    onClick: () => {
+      const el = document.querySelector('#services');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
+  },
+  secondaryCTA = {
+    text: "View Work",
+    onClick: () => {
+      const el = document.querySelector('#work');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  },
+  stats = [
+    { value: '365', label: 'Days Focused on Growth' },
+    { value: '100%', label: 'Commitment to Quality' },
+    { value: '24/7', label: 'Support Available' },
+    { value: '0%', label: 'Compromise on Standards' }
+  ]
+}) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Subtle gradient background */}
@@ -29,7 +47,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,7 +56,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50/80 border border-[#006cff]/10 mb-8"
           >
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-sm font-medium text-slate-800">Crafting Digital Excellence</span>
+            <span className="text-sm font-medium text-slate-800">{badgeText}</span>
           </motion.div>
 
           <motion.h1
@@ -47,10 +65,10 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight"
           >
-            Design. Develop.
+            {title1}
             <br />
             <span className="bg-gradient-to-r from-sky-300 via-[#006cff] to-sky-500 bg-clip-text text-transparent">
-              Dominate Digital.
+              {title2}
             </span>
           </motion.h1>
 
@@ -60,8 +78,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
-            We transform ideas into stunning digital experiences. From captivating designs 
-            to powerful web solutions and expert-led tech courses — we're your partner in digital success.
+            {description}
           </motion.p>
 
           <motion.div
@@ -71,18 +88,18 @@ export default function HeroSection() {
             className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button
-              onClick={() => scrollToSection('#services')}
-              className="bg-[#006cff] text-white hover:bg-[#0052cc] rounded-full px-8 py-6 text-base font-semibold shadow-xl shadow-[#006cff]/30 transition-all hover:scale-105"
+              onClick={primaryCTA.onClick}
+              className="bg-[#006cff] text-white hover:bg-[#0052cc] rounded-full px-8 py-4 text-base font-semibold shadow-xl shadow-[#006cff]/30 transition-all hover:scale-105 h-auto"
             >
-              Explore Services
+              {primaryCTA.text}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
-              onClick={() => scrollToSection('#work')}
+              onClick={secondaryCTA.onClick}
               variant="outline"
-              className="border-gray-300 text-slate-800 hover:bg-gray-50 rounded-full px-8 py-6 text-base font-semibold"
+              className="border-gray-300 text-slate-800 hover:bg-gray-50 rounded-full px-8 py-4 text-base font-semibold h-auto"
             >
-              View Work
+              {secondaryCTA.text}
             </Button>
           </motion.div>
 
@@ -92,12 +109,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto"
           >
-            {[
-              { value: '365', label: 'Days Focused on Growth' },
-              { value: '100%', label: 'Commitment to Quality' },
-              { value: '24/7', label: 'Support Available' },
-              { value: '0%', label: 'Compromise on Standards'}
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-slate-900">{stat.value}</div>
                 <div className="mt-1 text-sm text-gray-500">{stat.label}</div>
