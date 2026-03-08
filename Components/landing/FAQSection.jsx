@@ -136,10 +136,10 @@ export default function FAQSection() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden bg-[#006cff]"
+                      className="overflow-hidden bg-slate-50/80"
                     >
-                      <div className="px-8 py-6 border-t border-[#006cff]/20">
-                        <p className="text-white leading-relaxed text-sm sm:text-lg whitespace-pre-line">
+                      <div className="px-4 sm:px-8 py-4 sm:py-6 border-t border-slate-100">
+                        <p className="text-slate-600 leading-relaxed text-sm sm:text-lg whitespace-pre-line">
                           {faq.answer}
                         </p>
                       </div>

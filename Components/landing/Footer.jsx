@@ -66,8 +66,9 @@ export default function Footer() {
             </div>
 
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm font-medium">
-              Architecting the future of digital product design and engineering with
-              <span className="text-slate-900 font-bold italic"> precision & elite standards.</span>
+              Crafting high-performance digital products through 
+              <span className="text-slate-900 font-semibold"> precision design </span> 
+              and <span className="text-slate-900 font-semibold"> technical excellence.</span>
             </p>
 
             <div className="flex gap-3 pt-2">
@@ -121,16 +122,20 @@ export default function Footer() {
 
         {/* 3. Refined Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-slate-200/60 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2 group cursor-default">
-            <span className="text-[11px] font-bold text-slate-900 uppercase tracking-tight italic bg-white px-2 py-0.5 border border-slate-200 rounded shadow-sm">
-              Corelyn©
-            </span>
-            <span className="text-xs font-medium text-slate-400">{new Date().getFullYear()} — All Rights Reserved.</span>
+          <div className="flex flex-col md:flex-row items-center gap-6 text-xs font-medium text-slate-500">
+            <p>© {new Date().getFullYear()} Corelyn. All rights reserved.</p>
+            <div className="hidden sm:flex items-center gap-6 border-l border-slate-200/60 pl-6 h-4">
+              <a href="#" className="hover:text-[#006cff] transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-[#006cff] transition-colors">Terms of Service</a>
+            </div>
           </div>
 
-          <p className="text-sm text-slate-500 font-medium">
-            Crafted for <span className="text-[#006cff] font-bold italic">High-Scale Success</span>
-          </p>
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100/50 rounded-full border border-slate-200/50">
+            <div className="h-1.5 w-1.5 rounded-full bg-[#006cff] animate-pulse" />
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+              Engineering <span className="text-slate-900">Digital Excellence</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
