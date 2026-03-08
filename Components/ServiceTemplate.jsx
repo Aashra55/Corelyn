@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/Components/ui/button";
 import HeroSection from './landing/HeroSection';
+import ContactSection from './landing/ContactSection';
 import {
     ArrowRight,
     Sparkles,
@@ -715,6 +716,8 @@ export default function ServiceTemplate({ data }) {
                     </motion.div>
                 </div>
             </section>
+
+            <ContactSection />
         </div >
     );
 }
