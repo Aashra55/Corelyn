@@ -71,21 +71,67 @@ export default function ServiceTemplate({ data }) {
 
     return (
         <div className="relative bg-white selection:bg-[#006cff] selection:text-white">
-            {/* 1. Hero Section - ARCHITECTURAL SYNC (REUSABLE HERO) */}
-            <HeroSection
-                badgeText="Elite Service Standards"
-                title1={title.split(' ')[0]}
-                title2={title.split(' ').slice(1).join(' ')}
-                description={positioning}
-                primaryCTA={{
-                    text: "Start Project",
-                    onClick: scrollToContact
-                }}
-                secondaryCTA={{
-                    text: "Explore Flow",
-                    onClick: scrollToContact
-                }}
-            />
+            {/* 1. Specialized Service Hero */}
+            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50/30">
+                {/* Technical Grid Background */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                    <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(#006cff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+                </div>
+                
+                <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                    <div className="flex flex-col items-start max-w-4xl">
+                        {/* Breadcrumb */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="flex items-center gap-2 mb-8"
+                        >
+                            <a href="/" className="text-[10px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-[0.2em] transition-colors">Home</a>
+                            <ChevronRight className="w-3 h-3 text-slate-300" />
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Services</span>
+                            <ChevronRight className="w-3 h-3 text-slate-300" />
+                            <span className="text-[10px] font-black text-[#006cff] uppercase tracking-[0.2em]">{title}</span>
+                        </motion.div>
+
+                        <motion.h1 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight leading-[0.95] mb-8"
+                        >
+                            {title.split(' ')[0]} <br />
+                            <span className="text-[#006cff]">{title.split(' ').slice(1).join(' ')}</span>
+                        </motion.h1>
+
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mb-12"
+                        >
+                            {positioning}
+                        </motion.p>
+
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="flex flex-wrap gap-4"
+                        >
+                            <Button
+                                onClick={scrollToContact}
+                                className="h-14 px-8 rounded-full bg-[#006cff] text-white hover:bg-slate-900 font-bold text-base transition-all shadow-lg shadow-[#006cff]/20"
+                            >
+                                Start Your Project
+                                <ArrowRight className="ml-2 w-5 h-5" />
+                            </Button>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Decorative Bottom Fade */}
+                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
+            </section>
 
             {/* 2. Impact Section - THE IMPACT LENS (REDESIGNED) */}
             <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
