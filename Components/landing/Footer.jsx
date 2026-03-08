@@ -41,7 +41,7 @@ export default function Footer() {
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ x: "100%" }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 8, repeat: 9999, ease: "linear" }}
           className="w-1/2 h-full bg-gradient-to-r from-transparent via-[#006cff] to-transparent"
         />
       </div>
@@ -66,8 +66,8 @@ export default function Footer() {
             </div>
 
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm font-medium">
-              Crafting high-performance digital products through 
-              <span className="text-slate-900 font-semibold"> precision design </span> 
+              Crafting high-performance digital products through
+              <span className="text-slate-900 font-semibold"> precision design </span>
               and <span className="text-slate-900 font-semibold"> technical excellence.</span>
             </p>
 
