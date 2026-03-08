@@ -68,7 +68,7 @@ const SectionHeader = ({ subtitle, title, description, center = false, dark = fa
 export default function ServiceTemplate({ data }) {
     if (!data) return null;
 
-    const { title, positioning, whyMatters, whyMattersImage, deliverables, process, whyCorelyn } = data;
+    const { title, positioning, whyMatters, whyMattersImage, deliverables, process, whyCorelyn, portfolio } = data;
 
     return (
         <div className="relative bg-white selection:bg-[#006cff] selection:text-white">
@@ -511,102 +511,49 @@ export default function ServiceTemplate({ data }) {
                 </div>
             </section>
 
-            {/* 6. Case Studies - CINEMATIC ARCHIVAL (REDESIGNED) */}
-            <section className="py-24 bg-slate-50 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-40 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#006cff]/5 blur-[120px]" />
-                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-200/10 blur-[100px]" />
-                </div>
-
+            {/* 6. Featured Concepts & Projects */}
+            {/* <section className="py-24 bg-slate-50 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-                    <div className="grid lg:grid-cols-12 gap-16 items-center">
-                        {/* Left: Metadata & Status */}
-                        <div className="lg:col-span-4">
-                            <SectionHeader
-                                subtitle="Intelligence Archiving"
-                                title="Case Studies In Pipeline"
-                            />
-                            <div className="mt-8 space-y-6">
-                                <div className="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                                    <div className="flex justify-between items-end mb-3">
-                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Archival Status</span>
-                                        <span className="text-xs font-bold text-[#006cff]">92% Complete</span>
-                                    </div>
-                                    <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                                        <motion.div
-                                            initial={{ width: 0 }}
-                                            whileInView={{ width: '92%' }}
-                                            transition={{ duration: 2, ease: "easeOut" }}
-                                            className="h-full bg-gradient-to-r from-[#006cff] to-sky-400"
-                                        />
-                                    </div>
-                                </div>
-                                <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                                    "We are documenting high-impact execution success for {title} partners. Technical breakdowns and ROI metrics are being finalized for publication."
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Right: Glass Card Stack */}
-                        <div className="lg:col-span-8 relative">
-                            <div className="grid md:grid-cols-2 gap-6">
-                                {[
-                                    { id: 'DP-721', title: 'Enterprise Core Sync', tag: 'Architecture' },
-                                    { id: 'DP-402', title: 'Scale Factor Alpha', tag: 'Performance' },
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.2 }}
-                                        className="relative group h-64 rounded-[2rem] bg-white border border-slate-100 overflow-hidden shadow-xl"
-                                    >
-                                        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white" />
-                                        {/* Grid Pattern Overlay */}
-                                        <div className="absolute inset-0 opacity-[0.03]"
-                                            style={{ backgroundImage: 'radial-gradient(#006cff 1px, transparent 1px)', backgroundSize: '16px 16px' }}
-                                        />
-
-                                        <div className="relative h-full p-8 flex flex-col justify-between">
-                                            <div className="flex justify-between items-start">
-                                                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 font-black text-[#006cff] text-xs">
-                                                    {item.id}
-                                                </div>
-                                                <div className="px-3 py-1 rounded-full bg-sky-50 border border-sky-100">
-                                                    <span className="text-[10px] font-bold text-sky-700 uppercase tracking-tighter">{item.tag}</span>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div className="h-2 w-24 bg-slate-100 rounded-full mb-3" />
-                                                <h4 className="text-lg font-bold text-slate-900 tracking-tight leading-none group-hover:text-[#006cff] transition-colors">
-                                                    {item.title}
-                                                </h4>
-                                            </div>
-
-                                            <div className="flex items-center gap-2">
-                                                <RefreshCcw className="w-4 h-4 text-slate-300 animate-spin-slow" />
-                                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Documenting Analysis...</span>
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-
-                            {/* Decorative Technical Overlay */}
-                            <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none">
-                                <div className="flex flex-col gap-2">
-                                    {[...Array(6)].map((_, i) => (
-                                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-slate-200" />
-                                    ))}
-                                </div>
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+                        <SectionHeader
+                            subtitle="Portfolio"
+                            title="Concepts & Explorations"
+                            description="A glimpse into the design systems and technical solutions we are currently engineering."
+                        />
+                        <div className="pb-4">
+                            <div className="px-4 py-2 bg-white border border-slate-200 rounded-full shadow-sm flex items-center gap-3">
+                                <div className="w-2 h-2 rounded-full bg-[#006cff] animate-pulse" />
+                                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Always Innovating</span>
                             </div>
                         </div>
                     </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {portfolio?.map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group bg-white rounded-[2rem] border border-slate-100 p-8 hover:shadow-2xl transition-all duration-500"
+                            >
+                                <div className="text-[10px] font-black text-[#006cff] uppercase tracking-widest mb-4">{item.category}</div>
+                                <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#006cff] transition-colors">{item.title}</h4>
+                                <p className="text-slate-500 text-sm leading-relaxed mb-6">{item.desc}</p>
+                                <div className="h-40 w-full bg-slate-50 rounded-2xl overflow-hidden relative border border-slate-100">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#006cff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    {/* Placeholder for future images */}
+                                    {/* <div className="w-full h-full flex items-center justify-center">
+                                        <Layout className="w-8 h-8 text-slate-200" />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
-
+ */}
             <ContactSection />
         </div >
     );
