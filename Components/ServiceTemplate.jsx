@@ -394,35 +394,60 @@ export default function ServiceTemplate({ data }) {
                 </div>
             </section>
 
-            {/* 4. Strategic Framework - ALTERNATED TO GREY BG */}
-            <section className="py-12 md:py-16 bg-gray-50 relative overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <SectionHeader
-                        subtitle="Our Methodology"
-                        title="Strategic Pathway to Success"
-                        description="A rigorous 5-step strategic framework meticulously refined for elite digital execution."
-                    />
+            {/* 4. Strategic Framework - REFINED TIMELINE */}
+            <section className="py-24 bg-slate-50 relative overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+                
+                {/* Background Text Accent */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] md:text-[20rem] font-black text-slate-200/30 select-none pointer-events-none uppercase tracking-tighter opacity-50">
+                    Process
+                </div>
 
-                    <div className="grid md:grid-cols-5 gap-6 lg:gap-8">
-                        {process.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="relative group"
-                            >
-                                <div className="h-full p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-[#006cff]/20 hover:bg-white hover:shadow-xl transition-all duration-500 flex flex-col items-center md:items-start text-center md:text-left">
-                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#006cff] to-sky-500 shadow-lg shadow-[#006cff]/20 flex items-center justify-center mb-8 transform group-hover:scale-110 transition-transform duration-500">
-                                        <span className="text-xl font-black text-white tracking-tighter">{step.step}</span>
+                <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+                        <SectionHeader
+                            subtitle="Methodology"
+                            title="Strategic Pathway to Success"
+                            description="A rigorous framework meticulously refined for elite execution and measurable growth."
+                        />
+                    </div>
+
+                    <div className="relative">
+                        {/* Connecting Line (Desktop) */}
+                        <div className="absolute top-6 left-0 w-full h-px bg-slate-200 hidden md:block" />
+
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 relative">
+                            {process.map((step, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className="relative group"
+                                >
+                                    {/* Step Number Circle */}
+                                    <div className="relative z-20 mb-10">
+                                        <div className="w-12 h-12 rounded-full bg-white border-4 border-slate-50 flex items-center justify-center shadow-sm group-hover:shadow-lg group-hover:border-[#006cff]/10 transition-all duration-500">
+                                            <span className="text-sm font-black text-slate-400 group-hover:text-[#006cff] transition-colors">{step.step}</span>
+                                        </div>
                                     </div>
-                                    <h4 className="text-lg font-bold text-slate-900 mb-4 tracking-tight uppercase">{step.title}</h4>
-                                    <p className="text-slate-600 text-[13px] leading-relaxed font-medium">{step.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
+
+                                    <div className="space-y-4">
+                                        <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest leading-none">
+                                            {step.title}
+                                        </h4>
+                                        <div className="w-8 h-[2px] bg-[#006cff]/30 group-hover:w-full transition-all duration-500" />
+                                        <p className="text-slate-500 text-[13px] leading-relaxed font-medium">
+                                            {step.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Hover Card Background Effect */}
+                                    <div className="absolute -inset-6 bg-white/0 group-hover:bg-white/100 rounded-[2rem] -z-10 transition-all duration-500 border border-transparent group-hover:border-slate-100 group-hover:shadow-2xl group-hover:shadow-slate-200/50" />
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
