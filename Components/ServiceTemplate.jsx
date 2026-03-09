@@ -74,7 +74,7 @@ const SectionHeader = ({ subtitle, title, description, center = false, dark = fa
 export default function ServiceTemplate({ data }) {
     if (!data) return null;
 
-    const { title, positioning, whyMatters, whyMattersImage, deliverables, process, whyCorelyn, portfolio } = data;
+    const { title, positioning, whyMatters, whyMattersImage, deliverables, process, whyCorelyn, portfolio, promise } = data;
 
     return (
         <div className="relative bg-white selection:bg-[#006cff] selection:text-white">
@@ -407,12 +407,12 @@ export default function ServiceTemplate({ data }) {
                                 viewport={{ once: true }}
                                 className="relative py-4"
                             >
-                                <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase leading-[0.95]">
-                                    Building <span className="text-[#006cff]">Digital</span> <br />
-                                    Solutions <span className="text-slate-400">That Deliver Results.</span>
-                                </h3>
+                                <h3 
+                                    className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase leading-[0.95]"
+                                    dangerouslySetInnerHTML={{ __html: promise?.headline }}
+                                />
                                 <p className="text-base md:text-lg text-slate-500 font-medium max-w-xl leading-relaxed mb-12">
-                                    Every technical decision and creative stroke is meticulously focused on keeping your business goals at the center.
+                                    {promise?.description}
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
@@ -422,7 +422,6 @@ export default function ServiceTemplate({ data }) {
                                     >
                                         Start Your Project
                                     </Button>
-
                                 </div>
                             </motion.div>
                         </div>

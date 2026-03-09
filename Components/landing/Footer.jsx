@@ -5,14 +5,24 @@ import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 
 const footerLinks = {
-  Services: ['Graphic Design', 'Web Development', 'Brand Identity', 'UI/UX Design'],
+  Services: [
+    { label: 'Graphic Design', href: '/services/graphic-design' },
+    { label: 'Web Development', href: '/services/website-development' },
+    { label: 'Brand Identity', href: '/services/graphic-design'},
+    { label: 'Collaborative Program', href: '/services/collaborative-program' },
+  ],
   Resources: ['Blog', 'Case Studies', 'Free Templates', 'Community'],
-  Company: ['About Us', 'Our Team', 'Careers', 'Contact'],
+  Company: [
+    { label: 'About Us', href: '/#about' },
+    'Our Team',
+    'Careers',
+    { label: 'Contact', href: '/#contact' },
+  ],
   Support: [
     'Help Center',
     'Terms of Service',
     'Privacy Policy',
-    { label: 'FAQ', href: '#faq' },
+    { label: 'FAQ', href: '/#faq' },
   ],
 };
 
