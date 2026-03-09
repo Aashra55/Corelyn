@@ -129,7 +129,7 @@ export default function HeroSection({
         <div className="w-6 h-10 rounded-full border-2 border-gray-300 flex items-start justify-center p-2 bg-white/70 backdrop-blur">
           <motion.div
             animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            transition={{ duration: 1.5, repeat: 9999 }}
             className="w-1.5 h-1.5 rounded-full bg-gray-700"
           />
         </div>

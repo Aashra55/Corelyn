@@ -14,6 +14,12 @@ import {
     ShieldCheck,
     Zap,
     Globe,
+    Clock,
+    MousePointer2,
+    Infinity,
+    Monitor,
+    Component,
+    Palette,
     Layers,
     Code2,
     Workflow,
@@ -48,7 +54,7 @@ const SectionHeader = ({ subtitle, title, description, center = false, dark = fa
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`text-3xl md:text-5xl font-bold tracking-tight mb-8 ${dark ? 'text-white' : 'text-gray-950'}`}
+            className={`text-3xl md:text-4xl font-bold tracking-tight mb-8 ${dark ? 'text-white' : 'text-gray-950'}`}
         >
             {title}
         </motion.h2>
@@ -72,17 +78,27 @@ export default function ServiceTemplate({ data }) {
 
     return (
         <div className="relative bg-white selection:bg-[#006cff] selection:text-white">
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                @keyframes spin-slow {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                .animate-spin-custom {
+                    animation: spin-slow 4s linear infinite;
+                }
+            `}} />
             {/* 1. Specialized Service Hero */}
             <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-50/30">
                 {/* Technical Grid Background */}
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                     <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(#006cff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
                 </div>
-                
+
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                     <div className="flex flex-col items-start max-w-4xl">
                         {/* Breadcrumb */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             className="flex items-center gap-2 mb-8"
@@ -94,7 +110,7 @@ export default function ServiceTemplate({ data }) {
                             <span className="text-[10px] font-black text-[#006cff] uppercase tracking-[0.2em]">{title}</span>
                         </motion.div>
 
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -104,7 +120,7 @@ export default function ServiceTemplate({ data }) {
                             <span className="text-[#006cff]">{title.split(' ').slice(1).join(' ')}</span>
                         </motion.h1>
 
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
@@ -113,7 +129,7 @@ export default function ServiceTemplate({ data }) {
                             {positioning}
                         </motion.p>
 
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
@@ -134,175 +150,91 @@ export default function ServiceTemplate({ data }) {
                 <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
             </section>
 
-            {/* 2. Impact Section - THE IMPACT LENS (REDESIGNED) */}
-            <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+            {/* 2. Impact Section - THE PREMIUM INSIGHT GRID (V3 REDESIGN) */}
+            <section className="py-24 bg-white relative overflow-hidden">
+                {/* Visual accents: Premium background decorative elements */}
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#006cff]/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-sky-100/30 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
 
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-12 gap-16 md:gap-24 items-center">
-                        {/* Left: Content Lens */}
-                        <div className="lg:col-span-8 relative z-10">
-                            <SectionHeader
-                                subtitle="Impact Analysis"
-                                title="Why This Service Matters"
-                                description={whyMatters}
-                            />
+                <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                    <div className="mb-20 md:mb-32">
+                        <SectionHeader
+                            subtitle="Impact Analysis"
+                            title="Why This Service Matters"
+                            description={whyMatters}
+                            center={true} // Centered as per website standard
+                        />
+                    </div>
 
-                            <div className="space-y-8 mt-12">
-                                <div className="grid sm:grid-cols-2 gap-6">
-                                    {/* Metric Module 1 */}
-                                    <motion.div
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden group hover:shadow-xl transition-all duration-500"
-                                    >
-                                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                            <Target className="w-12 h-12 text-[#006cff]" />
-                                        </div>
-                                        <div className="relative z-10">
-                                            <div className="flex items-center gap-2 mb-4">
-                                                <div className="w-2 h-2 rounded-full bg-[#006cff] animate-pulse" />
-                                                <span className="text-[10px] font-black uppercase tracking-widest text-[#006cff]">Strategic Accuracy</span>
-                                            </div>
-                                            <h4 className="text-4xl font-black text-gray-900 mb-2">98%</h4>
-                                            <p className="text-sm text-gray-500 font-medium">Standardized Client Retention Rate.</p>
+                    <div className="grid md:grid-cols-3 gap-8 lg:gap-12 text-center">
+                        {/* Insight Card 1: 100% Client Satisfaction */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="group relative p-[1px] rounded-[2.5rem] overflow-hidden bg-gray-100"
+                        >
+                            {/* Always-on Rotating Border (Pauses on Hover) */}
+                            <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#006cff_360deg)] opacity-60 group-hover:opacity-100 animate-spin-custom group-hover:[animation-play-state:paused] transition-opacity duration-500" />
 
-                                            {/* Mini Sparkline Visualization */}
-                                            <div className="mt-6 h-8 w-full">
-                                                <svg className="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                                    <motion.path
-                                                        d="M 0 15 Q 25 5, 50 15 T 100 10"
-                                                        fill="none"
-                                                        stroke="#006cff"
-                                                        strokeWidth="2"
-                                                        initial={{ pathLength: 0 }}
-                                                        whileInView={{ pathLength: 1 }}
-                                                        transition={{ duration: 1.5 }}
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </motion.div>
-
-                                    {/* Metric Module 2 */}
-                                    <motion.div
-                                        initial={{ opacity: 0, x: 20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden group hover:shadow-xl transition-all duration-500"
-                                    >
-                                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                            <ShieldCheck className="w-12 h-12 text-[#006cff]" />
-                                        </div>
-                                        <div className="relative z-10">
-                                            <div className="flex items-center gap-2 mb-4">
-                                                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                                <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600">Verification</span>
-                                            </div>
-                                            <h4 className="text-3xl font-black text-gray-900 mb-2">24/7</h4>
-                                            <p className="text-sm text-gray-500 font-medium">Constant Critical Infrastructure Support.</p>
-
-                                            <div className="mt-6 flex gap-1">
-                                                {[...Array(8)].map((_, i) => (
-                                                    <motion.div
-                                                        key={i}
-                                                        className="h-6 w-full bg-gray-50 rounded-sm"
-                                                        initial={{ scaleY: 0.3 }}
-                                                        whileInView={{ scaleY: [0.3, 1, 0.3] }}
-                                                        transition={{ repeat: Infinity, duration: 2, delay: i * 0.1 }}
-                                                    />
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </motion.div>
+                            <div className="relative p-6 bg-white rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col items-center">
+                                <div className="w-14 h-14 mx-auto rounded-2xl bg-[#006cff]/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#006cff] transition-all duration-500 shadow-inner">
+                                    <Sparkles className="w-6 h-6 text-[#006cff] group-hover:text-white transition-colors" />
                                 </div>
-
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    className="p-8 bg-white rounded-[2.5rem] border-2 border-[#006cff]/10 shadow-lg relative overflow-hidden group"
-                                >
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#006cff]/5 blur-[60px]" />
-                                    <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-                                        <div className="w-14 h-14 rounded-2xl bg-[#006cff] flex items-center justify-center shrink-0 shadow-lg shadow-[#006cff]/20">
-                                            <Rocket className="w-7 h-7 text-white" />
-                                        </div>
-                                        <div>
-                                            <h5 className="text-[15px] font-black text-gray-900 mb-1 tracking-tight uppercase">Technical Dominance</h5>
-                                            <p className="text-gray-500 text-[13px] font-medium leading-relaxed">
-                                                We engineer competitive advantages that redefine market positions with precision execution.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </motion.div>
+                                <div className="text-3xl font-semibold text-gray-950 tracking-tighter mb-2 uppercase">100%</div>
+                                <h4 className="text-[11px] font-bold text-gray-900 uppercase tracking-widest mb-2">Client Satisfaction</h4>
+                                <p className="text-gray-500 text-[10px] font-medium leading-relaxed">
+                                    Our priority is delivering results that exceed expectations, every single time.
+                                </p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* Right: Asymmetric Technical Viewfinder (Scaled Down) */}
-                        <div className="lg:col-span-4 relative">
-                            {/* Engineering Metadata Accents */}
-                            <div className="absolute -top-6 -left-6 z-20 bg-white px-3 py-1 rounded-md border border-gray-100 shadow-sm">
-                                <span className="text-[9px] font-black text-gray-400 tracking-tighter">REF-ID: {title.toUpperCase().slice(0, 3)}-V2.0</span>
-                            </div>
-                            <div className="absolute -bottom-6 -right-6 z-20 bg-[#006cff] px-3 py-1.5 rounded-md shadow-xl border border-white/10">
-                                <span className="text-[9px] font-black text-white tracking-widest uppercase">Target_Locked</span>
-                            </div>
+                        {/* Insight Card 2: Timely Project Delivery */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="group relative p-[1px] rounded-[2.5rem] overflow-hidden bg-gray-100"
+                        >
+                            {/* Always-on Rotating Border (Pauses on Hover) */}
+                            <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#10b981_360deg)] opacity-60 group-hover:opacity-100 animate-spin-custom group-hover:[animation-play-state:paused] transition-opacity duration-500" />
 
-                            <div className="relative group">
-                                {/* Visual Framing */}
-                                <div className="absolute -inset-1 bg-gradient-to-tr from-[#006cff] to-sky-400 rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-
-                                <div className="relative aspect-square lg:aspect-square rounded-[2.5rem] overflow-hidden bg-gray-50 shadow-2xl border border-gray-100 max-w-[360px] mx-auto lg:max-w-none">
-                                    <img
-                                        src={whyMattersImage}
-                                        alt="Technical Precision"
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                                    />
-
-                                    {/* Viewfinder Overlays - Subtler Colors */}
-                                    <div className="absolute inset-0 border-[15px] border-white/10 pointer-events-none" />
-                                    <div className="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none">
-                                        <div className="flex justify-between">
-                                            <div className="w-6 h-6 border-t-2 border-l-2 border-[#006cff]/30" />
-                                            <div className="w-6 h-6 border-t-2 border-r-2 border-[#006cff]/30" />
-                                        </div>
-                                        {/* Scanning Line Animation */}
-                                        <motion.div
-                                            className="absolute left-0 right-0 h-px bg-[#006cff]/40 shadow-[0_0_15px_rgba(0,108,255,0.4)]"
-                                            animate={{ top: ['0%', '100%', '0%'] }}
-                                            transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
-                                        />
-                                        <div className="flex justify-between items-end">
-                                            <div className="w-6 h-6 border-b-2 border-l-2 border-[#006cff]/30" />
-                                            <div className="text-[#006cff]/40 text-[8px] font-black tracking-widest">
-                                                LAT: 25.011 <br />
-                                                LNG: 55.122
-                                            </div>
-                                            <div className="w-6 h-6 border-b-2 border-r-2 border-[#006cff]/30" />
-                                        </div>
-                                    </div>
+                            <div className="relative p-6 bg-white rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col items-center">
+                                <div className="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500 transition-all duration-500 shadow-inner">
+                                    <Clock className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
                                 </div>
-
-                                {/* Floating Accessory Stat */}
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white p-6 rounded-3xl shadow-2xl border border-gray-50 hidden xl:block"
-                                >
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-[#006cff]/10 flex items-center justify-center">
-                                            <Zap className="w-6 h-6 text-[#006cff]" />
-                                        </div>
-                                        <div>
-                                            <div className="text-xl font-black text-gray-900 tracking-tighter">14ms</div>
-                                            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Response Latency</div>
-                                        </div>
-                                    </div>
-                                </motion.div>
+                                <div className="text-3xl font-semibold text-gray-950 tracking-tighter mb-2 uppercase">Timely</div>
+                                <h4 className="text-[11px] font-bold text-gray-900 uppercase tracking-widest mb-2">Project Delivery</h4>
+                                <p className="text-gray-500 text-[10px] font-medium leading-relaxed">
+                                    We ensure your project milestones are met with rigorous punctuality and precision.
+                                </p>
                             </div>
-                        </div>
+                        </motion.div>
+
+                        {/* Insight Card 3: Creative Partnership */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="group relative p-[1px] rounded-[2.5rem] overflow-hidden bg-gray-100"
+                        >
+                            {/* Always-on Rotating Border (Pauses on Hover) */}
+                            <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#a855f7_360deg)] opacity-60 group-hover:opacity-100 animate-spin-custom group-hover:[animation-play-state:paused] transition-opacity duration-500" />
+
+                            <div className="relative p-6 bg-white rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col items-center">
+                                <div className="w-14 h-14 mx-auto rounded-2xl bg-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500 transition-all duration-500 shadow-inner">
+                                    <Palette className="w-6 h-6 text-purple-600 group-hover:text-white transition-colors" />
+                                </div>
+                                <div className="text-3xl font-semibold text-gray-950 tracking-tighter mb-2 uppercase">Creative</div>
+                                <h4 className="text-[11px] font-bold text-gray-900 uppercase tracking-widest mb-2">Partnership</h4>
+                                <p className="text-gray-500 text-[10px] font-medium leading-relaxed">
+                                    A team that works closely with you throughout the project to bring your vision to life.
+                                </p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -312,7 +244,7 @@ export default function ServiceTemplate({ data }) {
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                     <div className="mb-20 md:mb-32 text-center lg:text-left">
                         <SectionHeader
-                            subtitle="Engineering Pipeline"
+                            subtitle="Core Offerings"
                             title="Comprehensive Scope of Service"
                             description="A modular, high-performance breakdown of technical outcomes engineered for global scalability."
                         />
@@ -347,7 +279,7 @@ export default function ServiceTemplate({ data }) {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-6 gap-y-20 md:gap-y-32 relative z-20">
                             {deliverables.map((item, index) => {
-                                const icons = [Compass, Layout, Code2, Cpu, Globe, Zap, Lock, BarChart];
+                                const icons = [Palette, Layout, Code2, Monitor, Component, Infinity, Palette, Layers];
                                 const Icon = icons[index % icons.length] || CheckCircle2;
                                 const isEven = index % 2 === 0;
 
@@ -372,10 +304,6 @@ export default function ServiceTemplate({ data }) {
                                                 <div className="w-14 h-14 bg-white shadow-xl shadow-gray-100 rounded-xl flex items-center justify-center border border-gray-50 relative z-10">
                                                     <Icon className="w-7 h-7 text-[#006cff]" />
                                                 </div>
-                                                {/* Connecting Pulsar Dot */}
-                                                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white rounded-full p-1 shadow-md border border-gray-50 z-20">
-                                                    <div className="w-full h-full rounded-full bg-[#006cff] animate-pulse" />
-                                                </div>
                                             </div>
 
                                             <h3 className="text-sm font-bold text-gray-900 tracking-tight leading-snug mb-2 group-hover:text-[#006cff] transition-colors uppercase">
@@ -383,7 +311,7 @@ export default function ServiceTemplate({ data }) {
                                             </h3>
 
                                             <p className="text-gray-500 text-[11px] leading-relaxed font-medium">
-                                                Modular {item.toLowerCase()} architecture standards.
+                                                Tailored {item.toLowerCase()} solutions for your business.
                                             </p>
                                         </div>
                                     </motion.div>
@@ -397,7 +325,7 @@ export default function ServiceTemplate({ data }) {
             {/* 4. Strategic Framework - REFINED TIMELINE */}
             <section className="py-24 bg-slate-50 relative overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-                
+
                 {/* Background Text Accent */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] md:text-[20rem] font-black text-slate-200/30 select-none pointer-events-none uppercase tracking-tighter opacity-50">
                     Process
@@ -480,11 +408,11 @@ export default function ServiceTemplate({ data }) {
                                 className="relative py-4"
                             >
                                 <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase leading-[0.95]">
-                                    Driving <span className="text-[#006cff]">Measurable</span> <br />
-                                    Execution <span className="text-slate-400">Excellence.</span>
+                                    Building <span className="text-[#006cff]">Digital</span> <br />
+                                    Solutions <span className="text-slate-400">That Deliver Results.</span>
                                 </h3>
                                 <p className="text-base md:text-lg text-slate-500 font-medium max-w-xl leading-relaxed mb-12">
-                                    Every technical decision and creative stroke is meticulously backed by market data and your specific business objectives.
+                                    Every technical decision and creative stroke is meticulously focused on keeping your business goals at the center.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
@@ -494,12 +422,7 @@ export default function ServiceTemplate({ data }) {
                                     >
                                         Start Your Project
                                     </Button>
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-[#006cff]/10 flex items-center justify-center">
-                                            <Zap className="w-5 h-5 text-[#006cff]" />
-                                        </div>
-                                        <span className="font-bold text-slate-900 uppercase tracking-widest text-[10px]">Strategic Seal of Quality</span>
-                                    </div>
+
                                 </div>
                             </motion.div>
                         </div>
@@ -507,7 +430,7 @@ export default function ServiceTemplate({ data }) {
                         {/* Right Column: Numbered Benefits Grid */}
                         <div className="lg:col-span-6 grid sm:grid-cols-2 gap-6 lg:gap-8">
                             {whyCorelyn.map((item, index) => {
-                                const icons = [ShieldCheck, Workflow, Rocket, Code2];
+                                const icons = [Palette, MousePointer2, Component, Infinity];
                                 const Icon = icons[index % icons.length];
                                 return (
                                     <motion.div
@@ -569,7 +492,7 @@ export default function ServiceTemplate({ data }) {
                                 <div className="h-40 w-full bg-slate-50 rounded-2xl overflow-hidden relative border border-slate-100">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#006cff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                                     {/* Placeholder for future images */}
-                                    {/* <div className="w-full h-full flex items-center justify-center">
+            {/* <div className="w-full h-full flex items-center justify-center">
                                         <Layout className="w-8 h-8 text-slate-200" />
                                     </div>
                                 </div>
