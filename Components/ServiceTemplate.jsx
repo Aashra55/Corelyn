@@ -417,10 +417,11 @@ export default function ServiceTemplate({ data }) {
 
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
                                     <Button
-                                        className="h-14 px-10 rounded-full bg-[#006cff] text-white hover:bg-slate-900 font-bold text-lg transition-all shadow-xl shadow-[#006cff]/20 hover:scale-105"
                                         onClick={scrollToContact}
+                                        className="h-14 px-8 rounded-full bg-[#006cff] text-white hover:bg-slate-900 font-bold text-base transition-all shadow-lg shadow-[#006cff]/20"
                                     >
                                         Start Your Project
+                                        <ArrowRight className="ml-2 w-5 h-5" />
                                     </Button>
                                 </div>
                             </motion.div>
